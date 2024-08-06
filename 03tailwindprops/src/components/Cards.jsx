@@ -20,7 +20,7 @@ function cards(props) {   // direct username bhi de skte hai aise {username} ins
         debitis?
       </p>
       <button className="mt-2 inline-flex cursor-pointer items-center text-sm font-semibold text-white">
-        {props.btnText}  // ager koi ye prop use he na kre then use || "anything u want" ,, ager function mai he de rhe toh default de do 
+        {props.btnText}  {/* ager koi ye prop use he na kre then use || "anything u want" ,, ager function mai he de rhe toh default de do */}
       </button>
     </div>
     </div>

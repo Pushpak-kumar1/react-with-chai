@@ -16,7 +16,7 @@ function App() {
     <>
     <h1 className='bg-green-400 test-black p-1 rounded-xl mb-4'>TailWind Test</h1>
     <Cards username="Pushpak" btnText="click me" />
-    <Cards username="Anchal"  btnText="visit me" />
+    <Cards username="anchal"  btnText="visit me" />
     </>
   )
 }
