@@ -12,7 +12,7 @@ function App() {
 
   //Function to add Number
   const addValue = () => {
-    //console.log("clicked", counter);   // UI updation mai problem aaegi if varial k through krenge
+    //console.log("clicked", counter);   // UI updation mai problem aaegi if variable k through krenge
     //counter += 1;
       if (counter < 20) {
         setCounter(counter + 1);
@@ -20,7 +20,7 @@ function App() {
   }
 
   // Function to remove Number
-  const removeValue = () => {
+  const removeValue =() => {
       if (counter > -1) {
         setCounter(counter - 1);
       }
