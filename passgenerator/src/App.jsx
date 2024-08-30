@@ -9,6 +9,13 @@ function App() {
   // useRef Hook
   const passwordRef = useRef(null)
 
+  const copyPasswordToClipboard = useCallback( () => {
+    passwordRef.current?.select()  // highLigth kerne k liye
+    passwordRef.current?.setSelectionRange(0, 101)
+    window.navigator.clipboard.writeText(password)
+  }, [password])
+  
+
   const passwordGenerator = useCallback( () => {
     let pass = ""
     let str = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
@@ -24,15 +31,11 @@ function App() {
 
   }, [length, numberAllowed, charAllowed, setPassword])  // optimize karne k if koi changes aate hai --> memory mai rkhne k liye
 
-  const copyPasswordToClipboard = useCallback( () => {
-    passwordRef.current?.select()
-    passwordRef.current?.setSelectionRange(0, 101)
-    window.navigator.clipboard.writeText(password)
-  }, [password])
-  
+ 
   useEffect(() => {
     passwordGenerator()
   }, [length, numberAllowed, charAllowed, passwordGenerator])  // kuch bhi change hota hai toh fir se run karo
+
 
   return (
     <>
@@ -47,9 +50,9 @@ function App() {
             readOnly
             ref={passwordRef}
           />
-          <button
+           <button
            onClick={copyPasswordToClipboard}
-           className='outline-none bg-blue-500 text-white px-3 py-0.5 shrink-0'
+           className='outline-none bg-blue-500 text-white px-3 py-0.5 shrink-0 hover:bg-blue-700 rounded-md'
           >copy</button>
       </div>
 
